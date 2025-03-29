@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Subhan!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;700&display=swap');
+        
+        body {
+            background-color: #003366;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin: 50px;
+            padding: 30px;
+            border: 15px double #B0C4DE;
+            border-radius: 30px;
+            color: #E0FFFF;
+            position: relative;
+            overflow-y: auto;
+        }
+        
+        h1 {
+            color: #ADD8E6;
+            font-size: 50px;
+            font-family: 'Pacifico', cursive;
+        }
+        
+        h2 {
+            color: #B0E0E6;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        p {
+            font-size: 20px;
+            color: white;
+            font-weight: 500;
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: justify;
+        }
+        
+        img {
+            width: 300px;
+            border-radius: 20px;
+            margin: 15px;
+            border: 5px solid #B0C4DE;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 5px solid #B0C4DE;
+        }
+
+        .year {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 HAPPY BIRTHDAY SUBHAN! 🎂</h1>
+    <h2>🎈 19TH BIRTHDAY - 31 MARCH 2006 🎈</h2>
+    
+    <p id="countdown"></p>
+    
+    <img src="cake.jpg" alt="Cake">
+    <img src="cake2.jpg" alt="Cake 2">
+    
+    <p>
+        Happy Birthday, Subhan! 🎂 Today marks another milestone in your journey, and I hope this year brings you immense joy, success, and happiness. 
+        You are an amazing person, full of kindness, laughter, and energy. On this special occasion, I wish for all your dreams to come true. 
+        May your day be filled with love, laughter, and cherished moments with your family and friends. 
+        Thank you for being such a wonderful friend, and may this birthday be just the beginning of an incredible year ahead! 🎉
+    </p>
+
+    <h2>📸 Memories Through the Years</h2>
+    <div class="gallery">
+        <div>
+            <img src="2021.jpg" alt="2021">
+            <p class="year">2021</p>
+        </div>
+        <div>
+            <img src="2023.jpg" alt="2023">
+            <p class="year">2023</p>
+        </div>
+        <div>
+            <img src="2024.jpg" alt="2024">
+            <p class="year">2024</p>
+        </div>
+        <div>
+            <img src="2025.jpg" alt="2025">
+            <p class="year">2025</p>
+        </div>
+        <div>
+            <img src="after 2 years.jpg" alt="after 2 years">
+            <p class="year">after 2 years</p>
+        </div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function countdown() {
+            const birthday = new Date("March 31, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = birthday - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `⏳ Birthday Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (timeLeft < 0) {
+                document.getElementById("countdown").innerHTML = "🎂 It's Subhan's Birthday Today! 🎉";
+            }
+        }
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
